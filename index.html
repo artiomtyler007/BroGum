@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BroGum - Protein-Powered Chewing Gum</title>
+
+    <!-- SEO / Social -->
+    <meta name="description" content="BroGum — protein-infused chewing gum for fitness and jawline definition. Protein per pack, portable, multiple flavors.">
+    <meta name="robots" content="index, follow">
+    <!-- Replace the href below with your final URL (GitHub Pages URL or custom domain) -->
+    <link rel="canonical" href="https://artiomtyler007.github.io/BroGum/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BroGum - Protein-Powered Chewing Gum">
+    <meta property="og:description" content="Protein-infused gum delivering 5–15g per pack while you chew — builds jawline and supports fitness.">
+    <meta property="og:url" content="https://artiomtyler007.github.io/BroGum/">
+    <meta property="og:image" content="https://artiomtyler007.github.io/BroGum/og-image.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BroGum - Protein-Powered Chewing Gum">
+    <meta name="twitter:description" content="Protein-infused gum delivering 5–15g per pack while you chew — builds jawline and supports fitness.">
+    <meta name="twitter:image" content="https://artiomtyler007.github.io/BroGum/og-image.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "BroGum",
+      "image": "https://artiomtyler007.github.io/BroGum/og-image.png",
+      "description": "Protein-infused chewing gum for fitness and jawline definition. 5–15g protein per pack.",
+      "brand": {
+        "@type": "Brand",
+        "name": "BroGum"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "BroGum"
+      }
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* (unchanged CSS from your file) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f0f0f;
+            color: #e4e4e4;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav a {
+            color: #e4e4e4;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6b35;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        .hero-content {
+            flex: 1;
+            z-index: 10;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #ffffff 0%, #ff6b35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: #ff6b35;
+            padding: 1rem 2rem;
+            border: 2px solid #ff6b35;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .secondary-btn:hover {
+            background: rgba(255, 107, 53, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .gum-visual {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            box-shadow: 0 30px 60px rgba(255, 107, 53, 0.3);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #b0b0b0;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.05) 100%);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            padding: 2rem;
+            border-radius: 16px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 107, 53, 0.5);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(247, 147, 30, 0.1) 100%);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
+        }
+
+        .feature-card p {
+            color: #b0b0b0;
+            line-height: 1.7;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(247, 147, 30, 0.02) 100%);
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff6b35;
+            box-shadow: 0 20px 50px rgba(255, 107, 53, 0.2);
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .product-flavor {
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
+
+        .product-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-desc {
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .product-protein {
+            background: rgba(255, 107, 53, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: #ff6b35;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefits-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .benefits-list {
+            list-style: none;
+        }
+
+        .benefits-list li {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .benefits-icon {
+            color: #ff6b35;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        .benefits-list strong {
+            color: #ffffff;
+        }
+
+        .benefits-image {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(247, 147, 30, 0.1) 100%);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            font-size: 5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(247, 147, 30, 0.08) 100%);
+            border-top: 1px solid rgba(255, 107, 53, 0.2);
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(255, 107, 53, 0.2);
+            padding: 3rem 2rem;
+            color: #b0b0b0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #ff6b35;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-section a {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b35;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 3rem 1rem;
+                margin-top: 80px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .benefits-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .primary-btn, .secondary-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">BroGum</div>
+        <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#contact" class="cta-button">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Protein-Powered Jawline</h1>
+            <p>BroGum combines cutting-edge nutrition with jaw muscle training. Get 5-15g of protein per pack while sculpting the jawline you want.</p>
+            
+            <div class="hero-buttons">
+                <button class="primary-btn">Shop Now</button>
+                <button class="secondary-btn">Learn More</button>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">15g</div>
+                    <div class="stat-label">Protein Per Pack</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">20min</div>
+                    <div class="stat-label">Optimal Chewing</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Flavor Variety</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="gum-visual">💪</div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2 class="section-title">Why BroGum?</h2>
+        <p class="section-subtitle">The only gum that delivers protein AND jaw aesthetics</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Protein</h3>
+                <p>Get 5-15g of premium whey isolate or vegan protein without prep—no shakes, no mixing, just chew.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💪</div>
+                <h3>Jaw Training</h3>
+                <p>Engineered for 10-20 minute chewing sessions that activate jaw muscles and promote jawline definition over time.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Time-Release Tech</h3>
+                <p>Advanced microencapsulation technology releases protein gradually during mastication for sustained benefits.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Portable Power</h3>
+                <p>Shelf-stable, discreet, and perfect for gym, work, or on-the-go. Your protein hit goes anywhere.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🍬</div>
+                <h3>Multiple Flavors</h3>
+                <p>Fresh mint, bold fruit, and savory options keep every chewing session fresh and exciting.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">✅</div>
+                <h3>Clean Ingredients</h3>
+                <p>Premium protein sources (whey, collagen, or plant-based) with minimal additives. No compromise on quality.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="products-container">
+            <h2 class="section-title">Choose Your Flavor</h2>
+            <p class="section-subtitle">Pick the protein experience that fuels your grind</p>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-badge">CLASSIC</div>
+                    <div class="product-flavor">🌿</div>
+                    <div class="product-name">Fresh Mint</div>
+                    <div class="product-desc">Clean, crisp, energizing</div>
+                    <div class="product-protein">12g Whey Isolate</div>
+                    <p style="color: #b0b0b0; font-size: 0.9rem;">The go-to for gym sessions and morning focus.</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge">PREMIUM</div>
+                    <div class="product-flavor">🍓</div>
+                    <div class="product-name">Berry Blast</div>
+                    <div class="product-desc">Bold, fruity, refreshing</div>
+                    <div class="product-protein">15g Whey Isolate</div>
+                    <p style="color: #b0b0b0; font-size: 0.9rem;">Maximum protein with an explosion of flavor.</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge">VEGAN</div>
+                    <div class="product-flavor">🌱</div>
+                    <div class="product-name">Plant Power</div>
+                    <div class="product-desc">Sustainable, powerful, clean</div>
+                    <div class="product-protein">12g Vegan Protein</div>
+                    <p style="color: #b0b0b0; font-size: 0.9rem;">100% plant-based. Fits your values and fitness goals.</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge">COLLAGEN</div>
+                    <div class="product-flavor">✨</div>
+                    <div class="product-name">Collagen Complex</div>
+                    <div class="product-desc">Beauty from within</div>
+                    <div class="product-protein">10g Collagen + Protein</div>
+                    <p style="color: #b0b0b0; font-size: 0.9rem;">Protein + collagen for hair, skin, and that jawline.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <h2 class="section-title">Your Benefits</h2>
+        
+        <div class="benefits-content">
+            <div>
+                <ul class="benefits-list">
+                    <li>
+                        <span class="benefits-icon">✓</span>
+                        <div>
+                            <strong>Convenient Protein</strong>
+                            <p style="color: #b0b0b0; margin-top: 0.3rem;">No prep, no cleanup. Toss a pack in your gym bag or pocket.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefits-icon">✓</span>
+                        <div>
+                            <strong>Jaw Muscle Activation</strong>
+                            <p style="color: #b0b0b0; margin-top: 0.3rem;">10-20 minutes of resistance training for facial muscle engagement.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefits-icon">✓</span>
+                        <div>
+                            <strong>Improved Satiety</strong>
+                            <p style="color: #b0b0b0; margin-top: 0.3rem;">Extended chewing promotes fullness and reduces cravings.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefits-icon">✓</span>
+                        <div>
+                            <strong>Jawline Definition</strong>
+                            <p style="color: #b0b0b0; margin-top: 0.3rem;">Combined with your fitness routine, support aesthetic goals over time.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefits-icon">✓</span>
+                        <div>
+                            <strong>Dual Functionality</strong>
+                            <p style="color: #b0b0b0; margin-top: 0.3rem;">Nutrition and jaw training in one. No other product does this.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="benefits-image">
+                🦾
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-content">
+            <h2>Ready to Level Up?</h2>
+            <p>Join the fitness community that's chewing their way to better gains and better jawlines.</p>
+            <button class="primary-btn" style="font-size: 1.1rem; padding: 1.2rem 2.5rem;">Pre-Order BroGum Now</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About BroGum</h4>
+                <p style="margin-bottom: 1rem; font-size: 0.95rem;">The world's first protein-infused chewing gum designed for fitness enthusiasts and jawline aesthetics. Created by Artiom Tyler.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#features">Features</a>
+                <a href="#products">Products</a>
+                <a href="#benefits">Benefits</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <a href="mailto:artiomtyler007@gmail.com">artiomtyler007@gmail.com</a>
+                <a href="tel:2026510040">202-651-0040</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <p style="font-size: 0.9rem; color: #999;">FDA Compliance: Dietary Supplement</p>
+                <p style="font-size: 0.9rem; color: #999;">Food-grade manufacturing standards</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 BroGum. Crafted by fitness enthusiasts, for fitness enthusiasts. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .product-card, .stat').forEach(el => {
+            observer.observe(el);
+        });
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

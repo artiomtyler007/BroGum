@@ -1,0 +1,6 @@
+# Allow all crawlers (good for launch)
+User-agent: *
+Allow: /
+
+# Sitemap location (update to your published URL)
+Sitemap: https://artiomtyler007.github.io/BroGum/sitemap.xml
